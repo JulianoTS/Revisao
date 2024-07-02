@@ -1,13 +1,20 @@
 import './App.css'
-import BuscarCep from './componets/BuscarCep'
+import Home from './screens/Home'
+import PaginaCep from './screens/PaginaCep'
+import PaginaDog from './screens/PaginaDog'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
-  return (
-    <>
-      <div>
-        <BuscarCep/> 
-      </div>
-    </>
+
+  return(
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/busca-cep" element={<PaginaCep/>}/>
+        <Route path="/foto-dog" element={<PaginaDog/>} />
+      </Routes>
+    </Router>
   )
 }
 
